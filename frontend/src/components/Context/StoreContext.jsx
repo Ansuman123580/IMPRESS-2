@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [cartItems, setCartItem] = useState({});
   const [food_list, setFoodList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const url = "http://localhost:4000";
+  const url = "https://impress-2-backend.onrender.com";
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
   // Utility: composite key
