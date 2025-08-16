@@ -1,0 +1,99 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 2.5s ease-in-out;
+    color: white;
+    z-index: 2;
+  }
+  
+  .header-contents h2 {
+    font-weight: 600;
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .header-contents p {
+    font-size: clamp(12px, 1.2vw, 16px);
+    color: #f1f1f1;
+    line-height: 1.5;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .header-contents button {
+    border: none;
+    background-color: white;
+    color: #444;
+    font-weight: 500;
+    padding: 0.8vw 2vw;
+    font-size: clamp(13px, 1.1vw, 16px);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-contents button:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.05);
+    color: #FF4C24;
+  }
+  
+  /* Optional subtle overlay (if background is too bright) */
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 1050px) {
+    .header {
+      height: 38vw;
+    }
+  
+    .header-contents {
+      max-width: 60%;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .header {
+      height: 50vw;
+    }
+  
+    .header-contents {
+      max-width: 70%;
+      left: 5vw;
+      gap: 3vw;
+    }
+  
+    .header-contents p {
+      display: none;
+    }
+  
+    .header-contents button {
+      padding: 2.5vw 5vw;
+    }
+  }
+  

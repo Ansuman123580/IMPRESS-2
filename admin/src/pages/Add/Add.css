@@ -1,0 +1,205 @@
+/* ===== Base Container ===== */
+.add {
+    width: 70%;
+    margin-left: max(5vw, 25px);
+    margin-top: 50px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    color: #444;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  /* ===== Form Layout ===== */
+  .add form.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  /* ===== Image Upload ===== */
+  .add-img-upload {
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .add-img-upload p {
+    font-weight: 500;
+  }
+  
+  .add-img-upload label {
+    cursor: pointer;
+    display: inline-block;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .add-img-upload label:hover {
+    border-color: #00ae4e;
+    background: rgba(0, 174, 78, 0.05);
+  }
+  
+  .add-img-upload img {
+    width: 120px;
+    display: block;
+  }
+  
+  /* ===== Input Fields ===== */
+  .add-product-name,
+  .add-product-description,
+  .add-category,
+  .add-price {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .add-product-name p,
+  .add-product-description p,
+  .add-category p,
+  .add-price p {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .add-product-name input,
+  .add-product-description textarea,
+  .add-category select,
+  .add-price input {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-product-name input:focus,
+  .add-product-description textarea:focus,
+  .add-category select:focus,
+  .add-price input:focus {
+    border-color: #00ae4e;
+    box-shadow: 0 0 0 3px rgba(0, 174, 78, 0.15);
+  }
+  
+  /* ===== Category + Price Row ===== */
+  .add-category-price {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* ===== Submit Button ===== */
+  .add-btn {
+    background-color: #00ae4e;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .add-btn:hover {
+    background-color: #009244;
+    transform: translateY(-2px);
+  }
+  
+  /* ===== Responsive Styles ===== */
+  @media (max-width: 900px) {
+    .add {
+      width: 100%;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  
+    .add-category-price {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .add-product-name input,
+    .add-product-description textarea,
+    .add-category select,
+    .add-price input,
+    .add-btn {
+      width: 100%;
+      max-width: 100%;
+      font-size: 14px;
+    }
+  
+    .add-img-upload img {
+      width: 100px;
+    }
+  }
+  /* ==============================
+   Packing Sizes Section
+   ============================== */
+.packing-sizes {
+  margin-top: 20px;
+}
+
+.packing-sizes p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.packing-size-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.packing-size-row input {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  flex: 1;
+  font-size: 14px;
+}
+
+.packing-size-row input:focus {
+  outline: none;
+  border-color: #ffa500;
+  box-shadow: 0 0 4px rgba(255, 165, 0, 0.5);
+}
+
+.packing-size-row button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.packing-size-row button:hover {
+  background: #d93636;
+}
+
+.packing-sizes > button {
+  background: #ffa500;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.2s;
+}
+
+.packing-sizes > button:hover {
+  background: #e69500;
+}

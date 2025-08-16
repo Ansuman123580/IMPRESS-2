@@ -1,0 +1,78 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* CSS Variables for easy theme control */
+:root {
+  --font-primary: 'Outfit', sans-serif;
+  --bg-color: #FCFCFC;
+  --text-color: #1A1A1A;
+  --border-color: #A9A9A9;
+  --transition-speed: 0.25s;
+}
+
+/* Global Reset & Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: #555; /* Subtle hover effect */
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem 0;
+}
+
+/* Layout Helpers */
+.app-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cursor Styles */
+.cursor {
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease;
+}
+
+.cursor:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth animations for interactive elements */
+button, .cursor, a {
+  transition: all var(--transition-speed) ease;
+}

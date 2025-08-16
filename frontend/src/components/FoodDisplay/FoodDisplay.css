@@ -1,0 +1,46 @@
+.food-display {
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+  
+  .food-display h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    row-gap: 3rem;
+  }
+  
+  /* Optional: Add smooth hover effect for child cards */
+  .food-display-list > * {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .food-display-list > *:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Responsive padding (optional) */
+  @media (max-width: 768px) {
+    .food-display {
+      padding: 0 0.75rem;
+    }
+  
+    .food-display h2 {
+      font-size: 1.6rem;
+    }
+  
+    .food-display-list {
+      gap: 1.5rem;
+      row-gap: 2rem;
+    }
+  }
+  

@@ -1,0 +1,172 @@
+/* ======= List.css (Improved & Optimized) ======= */
+
+/* ===== Container ===== */
+.list {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* ===== Title ===== */
+  .list > p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* ===== Table Container ===== */
+  .list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* ===== Header Row ===== */
+  .list-table-format.title {
+    background: #f8f9fa;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 2px solid #e0e0e0;
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 100px 150px 60px;
+    align-items: center;
+    color: #555;
+  }
+  
+  /* ===== Table Rows ===== */
+  .list-table-format {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 100px 150px 60px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  
+  .list-table-format:hover {
+    background: #fafafa;
+    transform: translateX(2px);
+  }
+  
+  /* ===== Images ===== */
+  .list-table-format img {
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease;
+  }
+  
+  .list-table-format img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ===== Text ===== */
+  .list-table-format p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+  }
+  
+  /* ======= Toggle Switch ======= */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  
+  .toggle-switch input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  .toggle-switch input:checked + .slider:before {
+    transform: translateX(22px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+  /* ===== Delete Button ===== */
+  .cursor {
+    color: #ff4d4f;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .cursor:hover {
+    color: #ff1a1a;
+    transform: scale(1.3);
+  }
+  
+  /* ===== Responsive Design ===== */
+  @media screen and (max-width: 768px) {
+    /* Hide header row on mobile */
+    .list-table-format.title {
+      display: none;
+    }
+  
+    .list-table-format {
+      grid-template-columns: 80px 1fr;
+      grid-row-gap: 5px;
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+  
+    .list-table-format img {
+      grid-row: span 2;
+    }
+  
+    .list-table-format p {
+      font-size: 0.9rem;
+    }
+  
+    .cursor {
+      justify-self: end;
+    }
+  }
+  
