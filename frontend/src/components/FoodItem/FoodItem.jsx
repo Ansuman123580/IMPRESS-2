@@ -9,7 +9,7 @@ const FoodItem = ({ id, name, price, description, image, inStock, packingSizes =
     packingSizes && packingSizes.length > 0 ? packingSizes[0].size : ""
   );
 
-  const imageURL = `http://localhost:4000/uploads/${image}`;
+  const imageURL = `https://impress-2-backend.onrender.com/uploads/${image}`;
 
   const displayPrice = useMemo(() => {
     const food = { _id: id, price, packingSizes };
