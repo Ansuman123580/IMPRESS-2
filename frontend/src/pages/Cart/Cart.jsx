@@ -56,7 +56,7 @@ const Cart = () => {
           rows.map(({ key, id, size, qty, food, unitPrice, subtotal }) => (
             <div key={key} className="cart-items-item">
               <img
-                src={`http://localhost:4000/uploads/${food.image}`}
+                src={`https://impress-2-backend.onrender.com/uploads/${food.image}`}
                 alt={food.name}
                 onError={(e) => (e.target.src = "/placeholder.png")}
               />
