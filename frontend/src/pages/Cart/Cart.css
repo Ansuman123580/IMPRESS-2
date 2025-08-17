@@ -92,12 +92,15 @@
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 30px;
+  justify-content: space-between; /* 🔹 Fix: evenly distribute left & right */
+  align-items: flex-start;        /* 🔹 Prevent one card from going down */
 }
 
 /* ---------- Cart Total ---------- */
 .cart-total {
   flex: 1;
-  min-width: 280px;
+  min-width: 320px;
+  max-width: 48%; /* 🔹 prevent too wide */
   padding: 22px;
   background: #ffffff;
   border-radius: 12px;
@@ -159,7 +162,8 @@
 /* ---------- Promo Code Section ---------- */
 .cart-promocode {
   flex: 1;
-  min-width: 280px;
+  min-width: 320px;
+  max-width: 48%; /* 🔹 same width as total */
   padding: 22px;
   background: #ffffff;
   border-radius: 12px;
