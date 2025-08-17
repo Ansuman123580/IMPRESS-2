@@ -125,4 +125,53 @@
       width: 100%;
     }
   }
+  .pay-btn {
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    border-radius: 14px;
+    padding: 14px 22px;
+    font: 600 16px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    letter-spacing: .2px;
+    color: #00ae4e;
+    background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
+    box-shadow:
+      0 8px 16px rgba(0, 174, 78, .24),
+      inset 0 1px 0 rgba(255,255,255,.25);
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .2s ease, filter .2s ease, background .2s ease;
+  }
   
+  .pay-btn:hover {
+    filter: brightness(1.02);
+    box-shadow:
+      0 10px 20px rgba(0, 174, 78, .28),
+      inset 0 1px 0 rgba(255,255,255,.28);
+  }
+  
+  .pay-btn:active {
+    transform: translateY(1px);
+    background: linear-gradient(180deg, var(--green-dark) 0%, var(--green-darker) 100%);
+  }
+  
+  .pay-btn:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 3px #fff,
+      0 0 0 6px rgba(0, 174, 78, .6),
+      0 8px 16px rgba(0, 174, 78, .24);
+  }
+  
+  .pay-btn:disabled {
+    opacity: .52;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* optional: dark mode tweak */
+  @media (prefers-color-scheme: dark) {
+    .pay-btn { box-shadow:
+      0 8px 16px rgba(0, 174, 78, .35),
+      inset 0 1px 0 rgba(255,255,255,.18);
+    }
+  }
