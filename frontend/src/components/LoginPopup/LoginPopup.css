@@ -1,151 +1,177 @@
+/* ===== Overlay (Background Blur + Fade) ===== */
 .login-popup {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00000080;
-    display: grid;
-    animation: fadeInOverlay 0.4s ease-in-out;
-    backdrop-filter: blur(5px);
-  }
-  
-  @keyframes fadeInOverlay {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  animation: overlayFade 0.4s ease;
+}
+
+/* ===== Container (Popup Card with Bounce Effect) ===== */
+.login-popup-container {
+  background: #fff;
+  border-radius: 18px;
+  padding: 2.2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+
+  animation: popupBounce 0.5s ease;
+  transform-origin: center;
+}
+
+/* ===== Header ===== */
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-popup-title h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #222;
+  animation: fadeSlideDown 0.5s ease;
+}
+
+.login-popup-title img {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.25s ease;
+}
+
+.login-popup-title img:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+
+/* ===== Inputs ===== */
+.login-popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  animation: fadeSlideUp 0.5s ease;
+}
+
+.login-popup-inputs input {
+  padding: 0.85rem 1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.login-popup-inputs input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* ===== Button ===== */
+.login-popup-container button {
+  width: 100%;
+  padding: 0.95rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: fadeSlideUp 0.6s ease;
+}
+
+.login-popup-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-popup-container button:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.35);
+}
+
+/* ===== Terms Condition ===== */
+.login-popup-condition {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+  font-size: 0.87rem;
+  color: #555;
+  animation: fadeSlideUp 0.7s ease;
+}
+
+.login-popup-condition input {
+  margin-top: 3px;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* ===== Footer ===== */
+.login-popup-footer {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  animation: fadeSlideUp 0.8s ease;
+}
+
+.login-popup-footer span {
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.login-popup-footer span:hover {
+  color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ===== Animations ===== */
+@keyframes overlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupBounce {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeSlideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeSlideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
   .login-popup-container {
-    place-self: center;
-    width: min(90%, 400px);
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 30px 35px;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    font-family: 'Poppins', sans-serif;
-    color: #666;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.5s ease forwards;
-    transform: scale(0.95);
-    opacity: 0;
+    width: 92%;
+    padding: 1.7rem;
   }
-  
-  @keyframes slideIn {
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
+
+  .login-popup-title h2 {
+    font-size: 1.5rem;
   }
-  
-  .login-popup-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #222;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  
-  .login-popup-title img {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .login-popup-title img:hover {
-    transform: rotate(180deg) scale(1.2);
-  }
-  
-  .login-popup-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-  
-  .login-popup-inputs input {
-    padding: 12px 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    outline: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-  }
-  
-  .login-popup-inputs input:focus {
-    border-color: #00ae4e;
-    box-shadow: 0 0 0 3px #ff4c2433;
-  }
-  
-  .login-popup-container button {
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(145deg, #00ae4e, #00ae4e);
-    color: white;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  
-  .login-popup-container button:hover {
-    background: #00ae4e;
-    transform: translateY(-2px);
-  }
-  
-  .login-popup-condition {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #444;
-    margin-top: -10px;
-  }
-  
-  .login-popup-condition input {
-    margin-top: 3px;
-    accent-color: #00ae4e;
-  }
-  
-  .login-popup p {
-    font-size: 14px;
-    color: #444;
-    text-align: center;
-  }
-  
-  .login-popup p span {
-    color: #00ae4e;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .login-popup p span:hover {
-    color: #00ae4e;
-  }
-  
-  /* ✅ Mobile Responsive */
-  @media (max-width: 500px) {
-    .login-popup-container {
-      padding: 25px 20px;
-      width: 92%;
-    }
-  
-    .login-popup-title {
-      font-size: 16px;
-    }
-  
-    .login-popup-container button {
-      font-size: 14px;
-    }
-  }
-  
+}
